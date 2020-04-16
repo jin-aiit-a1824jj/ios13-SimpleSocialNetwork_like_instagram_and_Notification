@@ -13,4 +13,6 @@ target 'like_instagram_used_by_firebase' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
 
+  pod 'SDWebImage'
+  
 end
