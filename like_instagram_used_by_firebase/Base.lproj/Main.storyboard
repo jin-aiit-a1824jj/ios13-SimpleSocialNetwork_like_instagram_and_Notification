@@ -67,7 +67,7 @@
         <!--Upload-->
         <scene sceneID="QsA-f6-y8w">
             <objects>
-                <viewController id="kkc-Ve-wT3" sceneMemberID="viewController">
+                <viewController id="kkc-Ve-wT3" customClass="UploadViewController" customModule="like_instagram_used_by_firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uwl-Pl-rR7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,10 +80,39 @@
             </objects>
             <point key="canvasLocation" x="2051" y="394"/>
         </scene>
+        <!--Setting-->
+        <scene sceneID="68c-dr-78A">
+            <objects>
+                <viewController id="AVe-bx-gu0" customClass="SettingsViewController" customModule="like_instagram_used_by_firebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R2E-fM-n9p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81Z-xf-mC9">
+                                <rect key="frame" x="131" y="398" width="153" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="AVe-bx-gu0" eventType="touchUpInside" id="kYx-qf-wuV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="f7j-2X-36F"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Setting" image="s.circle.fill" catalog="system" id="k5j-46-2Zo"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="F5m-zy-z2X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Qv-bf-OWz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2012" y="1108"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="bT9-FP-6oF">
             <objects>
-                <viewController id="X5R-LS-0Lv" sceneMemberID="viewController">
+                <viewController id="X5R-LS-0Lv" customClass="FeedViewController" customModule="like_instagram_used_by_firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Utj-fh-XDp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,6 +138,7 @@
                     <connections>
                         <segue destination="X5R-LS-0Lv" kind="relationship" relationship="viewControllers" id="N6q-3J-mCz"/>
                         <segue destination="kkc-Ve-wT3" kind="relationship" relationship="viewControllers" id="vfE-RE-O8Q"/>
+                        <segue destination="AVe-bx-gu0" kind="relationship" relationship="viewControllers" id="Bbh-3p-qW1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYz-Sm-6yY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -118,6 +148,7 @@
     </scenes>
     <resources>
         <image name="f.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="s.circle.fill" catalog="system" width="128" height="121"/>
         <image name="u.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
