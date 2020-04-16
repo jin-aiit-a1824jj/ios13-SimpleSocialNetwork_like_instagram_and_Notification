@@ -7,28 +7,71 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var userEmailArray = [String]()
+    var userCommentArray = [String]()
+    var likeArray = [String]()
+    var userImageArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        getDataFromFirestore()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return userEmailArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedCell
-        cell.userEmailLabel.text = "user@user.user"
-        cell.likeLabel.text = "123"
-        cell.commentLabel.text = "test comment"
+        cell.userEmailLabel.text = userEmailArray[indexPath.row]
+        cell.likeLabel.text = likeArray[indexPath.row]
+        cell.commentLabel.text = userCommentArray[indexPath.row]
         cell.userImageView.image = UIImage(named: "select.png")
         return cell
+    }
+    
+    func getDataFromFirestore() {
+        
+        let fireStoreDatabase = Firestore.firestore()
+        fireStoreDatabase.collection("Posts").addSnapshotListener{ (snapshot, error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            } else {
+                if  snapshot != nil && snapshot?.isEmpty != true {
+                    for document in snapshot!.documents {
+                        let documentID = document.documentID
+                        print(documentID)
+                        
+                        if let postedBy = document.get("postedBy") as? String {
+                            self.userEmailArray.append(postedBy)
+                        }
+                        
+                        if let postComment = document.get("postComment") as? String {
+                            self.userCommentArray.append(postComment)
+                        }
+                        
+                        if let postedlikes = document.get("likes") as? Int {
+                            self.likeArray.append("\(postedlikes)")
+                        }
+                        
+                        if let imageUrl = document.get("imageUrl") as? String {
+                            self.userImageArray.append(imageUrl)
+                        }
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
     }
     
 }
