@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		65BE73452448388C0072D1CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65BE73442448388C0072D1CA /* GoogleService-Info.plist */; };
+		65BE734724483E460072D1CA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BE734624483E460072D1CA /* FeedCell.swift */; };
 		65CD454D244802B600E90A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CD454C244802B600E90A13 /* AppDelegate.swift */; };
 		65CD454F244802B600E90A13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CD454E244802B600E90A13 /* SceneDelegate.swift */; };
 		65CD4551244802B600E90A13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CD4550244802B600E90A13 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		65BE73442448388C0072D1CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65BE734624483E460072D1CA /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		65CD4549244802B600E90A13 /* like_instagram_used_by_firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = like_instagram_used_by_firebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CD454C244802B600E90A13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65CD454E244802B600E90A13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				65E0A3A12448099F00982613 /* FeedViewController.swift */,
 				65E0A3A3244809AD00982613 /* UploadViewController.swift */,
 				65E0A3A5244809BD00982613 /* SettingsViewController.swift */,
+				65BE734624483E460072D1CA /* FeedCell.swift */,
 			);
 			path = like_instagram_used_by_firebase;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65BE734724483E460072D1CA /* FeedCell.swift in Sources */,
 				65CD4551244802B600E90A13 /* ViewController.swift in Sources */,
 				65E0A3A4244809AD00982613 /* UploadViewController.swift in Sources */,
 				65CD454D244802B600E90A13 /* AppDelegate.swift in Sources */,
