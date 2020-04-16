@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65BE73452448388C0072D1CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65BE73442448388C0072D1CA /* GoogleService-Info.plist */; };
 		65CD454D244802B600E90A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CD454C244802B600E90A13 /* AppDelegate.swift */; };
 		65CD454F244802B600E90A13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CD454E244802B600E90A13 /* SceneDelegate.swift */; };
 		65CD4551244802B600E90A13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CD4550244802B600E90A13 /* ViewController.swift */; };
@@ -16,11 +17,11 @@
 		65E0A3A22448099F00982613 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E0A3A12448099F00982613 /* FeedViewController.swift */; };
 		65E0A3A4244809AD00982613 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E0A3A3244809AD00982613 /* UploadViewController.swift */; };
 		65E0A3A6244809BD00982613 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E0A3A5244809BD00982613 /* SettingsViewController.swift */; };
-		65E0A3A8244817C300982613 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65E0A3A7244817C300982613 /* GoogleService-Info.plist */; };
 		8539E024C8304496DF6BBF90 /* Pods_like_instagram_used_by_firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB492A9DCF323025EDF5FBB1 /* Pods_like_instagram_used_by_firebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65BE73442448388C0072D1CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65CD4549244802B600E90A13 /* like_instagram_used_by_firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = like_instagram_used_by_firebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CD454C244802B600E90A13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65CD454E244802B600E90A13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +33,6 @@
 		65E0A3A12448099F00982613 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		65E0A3A3244809AD00982613 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		65E0A3A5244809BD00982613 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		65E0A3A7244817C300982613 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73C45FD5277F6FEBC9B47F20 /* Pods-like_instagram_used_by_firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-like_instagram_used_by_firebase.debug.xcconfig"; path = "Target Support Files/Pods-like_instagram_used_by_firebase/Pods-like_instagram_used_by_firebase.debug.xcconfig"; sourceTree = "<group>"; };
 		B1C299123DCA41BD94CFFD59 /* Pods-like_instagram_used_by_firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-like_instagram_used_by_firebase.release.xcconfig"; path = "Target Support Files/Pods-like_instagram_used_by_firebase/Pods-like_instagram_used_by_firebase.release.xcconfig"; sourceTree = "<group>"; };
 		DB492A9DCF323025EDF5FBB1 /* Pods_like_instagram_used_by_firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_like_instagram_used_by_firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 				65CD4555244802B700E90A13 /* Assets.xcassets */,
 				65CD4557244802B700E90A13 /* LaunchScreen.storyboard */,
 				65CD455A244802B700E90A13 /* Info.plist */,
-				65E0A3A7244817C300982613 /* GoogleService-Info.plist */,
+				65BE73442448388C0072D1CA /* GoogleService-Info.plist */,
 				65E0A3A12448099F00982613 /* FeedViewController.swift */,
 				65E0A3A3244809AD00982613 /* UploadViewController.swift */,
 				65E0A3A5244809BD00982613 /* SettingsViewController.swift */,
@@ -164,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CD4559244802B700E90A13 /* LaunchScreen.storyboard in Resources */,
-				65E0A3A8244817C300982613 /* GoogleService-Info.plist in Resources */,
+				65BE73452448388C0072D1CA /* GoogleService-Info.plist in Resources */,
 				65CD4556244802B700E90A13 /* Assets.xcassets in Resources */,
 				65CD4554244802B600E90A13 /* Main.storyboard in Resources */,
 			);
