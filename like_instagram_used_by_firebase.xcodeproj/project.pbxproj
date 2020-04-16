@@ -13,10 +13,10 @@
 		65CD4554244802B600E90A13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CD4552244802B600E90A13 /* Main.storyboard */; };
 		65CD4556244802B700E90A13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CD4555244802B700E90A13 /* Assets.xcassets */; };
 		65CD4559244802B700E90A13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CD4557244802B700E90A13 /* LaunchScreen.storyboard */; };
-		65CD4561244803E800E90A13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65CD4560244803E800E90A13 /* GoogleService-Info.plist */; };
 		65E0A3A22448099F00982613 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E0A3A12448099F00982613 /* FeedViewController.swift */; };
 		65E0A3A4244809AD00982613 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E0A3A3244809AD00982613 /* UploadViewController.swift */; };
 		65E0A3A6244809BD00982613 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E0A3A5244809BD00982613 /* SettingsViewController.swift */; };
+		65E0A3A8244817C300982613 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65E0A3A7244817C300982613 /* GoogleService-Info.plist */; };
 		8539E024C8304496DF6BBF90 /* Pods_like_instagram_used_by_firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB492A9DCF323025EDF5FBB1 /* Pods_like_instagram_used_by_firebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,10 +29,10 @@
 		65CD4555244802B700E90A13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65CD4558244802B700E90A13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65CD455A244802B700E90A13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65CD4560244803E800E90A13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65E0A3A12448099F00982613 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		65E0A3A3244809AD00982613 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		65E0A3A5244809BD00982613 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		65E0A3A7244817C300982613 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73C45FD5277F6FEBC9B47F20 /* Pods-like_instagram_used_by_firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-like_instagram_used_by_firebase.debug.xcconfig"; path = "Target Support Files/Pods-like_instagram_used_by_firebase/Pods-like_instagram_used_by_firebase.debug.xcconfig"; sourceTree = "<group>"; };
 		B1C299123DCA41BD94CFFD59 /* Pods-like_instagram_used_by_firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-like_instagram_used_by_firebase.release.xcconfig"; path = "Target Support Files/Pods-like_instagram_used_by_firebase/Pods-like_instagram_used_by_firebase.release.xcconfig"; sourceTree = "<group>"; };
 		DB492A9DCF323025EDF5FBB1 /* Pods_like_instagram_used_by_firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_like_instagram_used_by_firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 				65CD4555244802B700E90A13 /* Assets.xcassets */,
 				65CD4557244802B700E90A13 /* LaunchScreen.storyboard */,
 				65CD455A244802B700E90A13 /* Info.plist */,
-				65CD4560244803E800E90A13 /* GoogleService-Info.plist */,
+				65E0A3A7244817C300982613 /* GoogleService-Info.plist */,
 				65E0A3A12448099F00982613 /* FeedViewController.swift */,
 				65E0A3A3244809AD00982613 /* UploadViewController.swift */,
 				65E0A3A5244809BD00982613 /* SettingsViewController.swift */,
@@ -164,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CD4559244802B700E90A13 /* LaunchScreen.storyboard in Resources */,
-				65CD4561244803E800E90A13 /* GoogleService-Info.plist in Resources */,
+				65E0A3A8244817C300982613 /* GoogleService-Info.plist in Resources */,
 				65CD4556244802B700E90A13 /* Assets.xcassets in Resources */,
 				65CD4554244802B600E90A13 /* Main.storyboard in Resources */,
 			);
