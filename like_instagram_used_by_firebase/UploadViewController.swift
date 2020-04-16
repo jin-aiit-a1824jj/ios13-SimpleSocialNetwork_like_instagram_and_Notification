@@ -67,11 +67,15 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                                 ["imageUrl" : imageUrl!,
                                  "postedBy" : Auth.auth().currentUser!.email!,
                                  "postComment" : self.commentText.text!,
-                                 "date" : "date",
+                                 "date" : FieldValue.serverTimestamp(),
                                  "likes" : 0] as [String: Any]
                             firestoreReference = firestoreDatabase.collection("Posts").addDocument(data:   firestorePost) { (error) in
                                 if error != nil {
                                     self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Unknow error")
+                                }else{
+                                    self.imageView.image = UIImage(named: "select.png")
+                                    self.commentText.text = ""
+                                    self.tabBarController?.selectedIndex = 0
                                 }
                             }
                             
