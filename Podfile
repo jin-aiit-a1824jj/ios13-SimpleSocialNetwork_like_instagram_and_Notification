@@ -6,5 +6,11 @@ target 'like_instagram_used_by_firebase' do
   use_frameworks!
 
   # Pods for like_instagram_used_by_firebase
+  
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
 end
