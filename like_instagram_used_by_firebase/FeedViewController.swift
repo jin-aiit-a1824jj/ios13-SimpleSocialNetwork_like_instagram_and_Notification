@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SDWebImage
+import OneSignal
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,12 +21,55 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var userImageArray = [String]()
     var documentIdArray = [String]()
     
+    let fireStoreDatabase = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
         getDataFromFirestore()
+        
+        //Push Notification
+        //OneSignal.postNotification(["contents": ["en": "Test Message"], "include_player_ids": ["3009e210-3166-11e5-bc1b-db44eb02b120"]])
+        
+        let status:OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        let playerId = status.subscriptionStatus.userId
+        if let playerNewId = playerId {
+            print("player ID : " + playerNewId)
+            
+            fireStoreDatabase.collection("PlayerId").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { (snapshot, error) in
+                if error == nil{
+                    if snapshot != nil && snapshot?.isEmpty == false {
+                        for document in snapshot!.documents {
+                            if let playerIDFromFirebase = document.get("player_id") as? String {
+                                print("playerIDFromFirebase: " + playerIDFromFirebase)
+                                
+                                if playerNewId != playerIDFromFirebase {
+                                    let playerIdDictionary = ["email" : Auth.auth().currentUser!.email!, "player_id" : playerNewId] as [String : Any]
+                                    self.fireStoreDatabase.collection("PlayerId").addDocument(data: playerIdDictionary) { error in
+                                        if error != nil {
+                                            print(error?.localizedDescription as Any)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        let playerIdDictionary = ["email" : Auth.auth().currentUser!.email!, "player_id" : playerNewId] as [String : Any]
+                        self.fireStoreDatabase.collection("PlayerId").addDocument(data: playerIdDictionary) { error in
+                            if error != nil {
+                                print(error?.localizedDescription as Any)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,7 +97,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func getDataFromFirestore() {
         
-        let fireStoreDatabase = Firestore.firestore()
         fireStoreDatabase.collection("Posts").order(by: "date", descending: true) .addSnapshotListener{ (snapshot, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
@@ -100,14 +143,14 @@ extension UIImage {
         let widthRatio = _size.width / size.width
         let heightRatio = _size.height / size.height
         let ratio = widthRatio < heightRatio ? widthRatio : heightRatio
-
+        
         let resizedSize = CGSize(width: size.width * ratio, height: size.height * ratio)
-
+        
         UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0) // 変更
         draw(in: CGRect(origin: .zero, size: resizedSize))
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-
+        
         return resizedImage
     }
 }
