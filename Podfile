@@ -15,4 +15,9 @@ target 'like_instagram_used_by_firebase' do
 
   pod 'SDWebImage'
   
+  pod 'OneSignal', '>= 2.11.2', '< 3.0'
+  target 'OneSignalNotificationServiceExtension' do
+    pod 'OneSignal', '>= 2.11.2', '< 3.0'
+  end
+  
 end
