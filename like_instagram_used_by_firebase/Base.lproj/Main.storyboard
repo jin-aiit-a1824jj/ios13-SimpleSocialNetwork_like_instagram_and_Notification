@@ -183,12 +183,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaN-BM-TJj">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaN-BM-TJj">
                                                     <rect key="frame" x="20" y="52" width="374" height="229"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="374" id="h3F-Lc-TpT"/>
-                                                        <constraint firstAttribute="height" constant="229" id="ynp-CE-jZT"/>
-                                                    </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpK-4g-y0a">
                                                     <rect key="frame" x="20" y="359" width="73" height="30"/>
@@ -221,11 +217,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="SaN-BM-TJj" firstAttribute="leading" secondItem="i4W-o7-UDk" secondAttribute="leadingMargin" id="A9E-H7-lCt"/>
+                                                <constraint firstItem="SaN-BM-TJj" firstAttribute="leading" secondItem="i4W-o7-UDk" secondAttribute="leadingMargin" id="54Y-f6-AZ0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="SaN-BM-TJj" secondAttribute="bottom" constant="108" id="69n-qe-jwN"/>
                                                 <constraint firstItem="eKd-al-sx1" firstAttribute="top" secondItem="i4W-o7-UDk" secondAttribute="topMargin" id="Gyu-hr-Yg0"/>
-                                                <constraint firstItem="SaN-BM-TJj" firstAttribute="top" secondItem="i4W-o7-UDk" secondAttribute="topMargin" constant="41" id="Wxb-HF-WZQ"/>
                                                 <constraint firstItem="eKd-al-sx1" firstAttribute="trailing" secondItem="i4W-o7-UDk" secondAttribute="trailingMargin" id="Zm5-Bg-3PP"/>
+                                                <constraint firstItem="SaN-BM-TJj" firstAttribute="top" secondItem="i4W-o7-UDk" secondAttribute="topMargin" constant="41" id="cl1-vD-1ka"/>
                                                 <constraint firstItem="eKd-al-sx1" firstAttribute="leading" secondItem="i4W-o7-UDk" secondAttribute="leadingMargin" id="khx-ep-I8z"/>
+                                                <constraint firstItem="SaN-BM-TJj" firstAttribute="trailing" secondItem="i4W-o7-UDk" secondAttribute="trailingMargin" id="uRa-w5-yPP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

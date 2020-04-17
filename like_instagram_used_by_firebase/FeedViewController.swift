@@ -29,44 +29,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         
         getDataFromFirestore()
-        
-        let status:OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
-        let playerId = status.subscriptionStatus.userId
-        if let playerNewId = playerId {
-            print("player ID : " + playerNewId)
-            
-            fireStoreDatabase.collection("PlayerId").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { (snapshot, error) in
-                if error == nil{
-                    if snapshot != nil && snapshot?.isEmpty == false {
-                        for document in snapshot!.documents {
-                            if let playerIDFromFirebase = document.get("player_id") as? String {
-                                print("playerIDFromFirebase: " + playerIDFromFirebase)
-                                
-                                if playerNewId != playerIDFromFirebase {
-                                    let playerIdDictionary = ["email" : Auth.auth().currentUser!.email!, "player_id" : playerNewId] as [String : Any]
-                                    self.fireStoreDatabase.collection("PlayerId").addDocument(data: playerIdDictionary) { error in
-                                        if error != nil {
-                                            print(error?.localizedDescription as Any)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    } else {
-                        let playerIdDictionary = ["email" : Auth.auth().currentUser!.email!, "player_id" : playerNewId] as [String : Any]
-                        self.fireStoreDatabase.collection("PlayerId").addDocument(data: playerIdDictionary) { error in
-                            if error != nil {
-                                print(error?.localizedDescription as Any)
-                            }
-                        }
-                    }
-                }
-            }
-            
-            
-            
-        }
-        
+        postPlayerID()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,11 +43,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.likeLabel.text = likeArray[indexPath.row]
         cell.commentLabel.text = userCommentArray[indexPath.row]
         cell.documentIdLabel.text = documentIdArray[indexPath.row]
+        cell.userImageView?.sd_setImage(with: URL(string: userImageArray[indexPath.row]))
         
-        
-        cell.imageView?.sd_setImage(with: URL(string: userImageArray[indexPath.row]), placeholderImage: UIImage(named: "select.png")){ ( image, _, _, _) in
-            cell.imageView?.image = image?.resize(size: CGSize(width: 374.0, height: 229.0))
-        }
         return cell
     }
     
@@ -126,11 +86,51 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                             self.userImageArray.append(imageUrl)
                         }
                     }
+                    
                     self.tableView.reloadData()
                 }
             }
         }
         
+    }
+    
+    func postPlayerID () {
+        let status:OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        let playerId = status.subscriptionStatus.userId
+        if let playerNewId = playerId {
+            print("player ID : " + playerNewId)
+            
+            fireStoreDatabase.collection("PlayerId").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { (snapshot, error) in
+                if error == nil{
+                    if snapshot != nil && snapshot?.isEmpty == false {
+                        for document in snapshot!.documents {
+                            if let playerIDFromFirebase = document.get("player_id") as? String {
+                                print("playerIDFromFirebase: " + playerIDFromFirebase)
+                                
+                                if playerNewId != playerIDFromFirebase {
+                                    let playerIdDictionary = ["email" : Auth.auth().currentUser!.email!, "player_id" : playerNewId] as [String : Any]
+                                    self.fireStoreDatabase.collection("PlayerId").addDocument(data: playerIdDictionary) { error in
+                                        if error != nil {
+                                            print(error?.localizedDescription as Any)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        let playerIdDictionary = ["email" : Auth.auth().currentUser!.email!, "player_id" : playerNewId] as [String : Any]
+                        self.fireStoreDatabase.collection("PlayerId").addDocument(data: playerIdDictionary) { error in
+                            if error != nil {
+                                print(error?.localizedDescription as Any)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            
+        }
     }
     
 }
