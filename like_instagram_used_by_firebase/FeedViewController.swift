@@ -30,9 +30,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         getDataFromFirestore()
         
-        //Push Notification
-        //OneSignal.postNotification(["contents": ["en": "Test Message"], "include_player_ids": ["3009e210-3166-11e5-bc1b-db44eb02b120"]])
-        
         let status:OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
         let playerId = status.subscriptionStatus.userId
         if let playerNewId = playerId {
